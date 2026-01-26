@@ -8,20 +8,21 @@
 * **Repository: https://github.com/ChigozieIkechukwu/goph547-w2026-lab00-stCI**
 
 **1. Introduction**
-The purpose of this lab was to familiarize myself with the essential software tools and development practices for scientific computing in Python. This involved setting up my development environment on Windows, using Git and GitHub for version control, and creating a structured Python package that utilizes NumPy for numerical operations and Matplotlib for data visualization.
+* The purpose of this lab was to familiarize myself with the essential software tools and development practices for scientific computing in Python. This involved setting up my development environment on Windows, using Git and GitHub for version control, and creating a structured Python package that utilizes NumPy for numerical operations and Matplotlib for data visualization.
 
 **2. Installation Instructions (Windows PowerShell)**
-I have designed these instructions to allow my package to be downloaded and installed into a virtual environment on a Windows system.
+* I have designed these instructions to allow my package to be downloaded and installed into a virtual environment on a Windows system.
 
 * **Step 1: Clone my Repository**
-I opened my Windows PowerShell and navigate to my desired directory, then I used the GitHub CLI to clone the repository:
+* I opened my Windows PowerShell and navigate to my desired directory, then I used the GitHub CLI to clone the repository:
 
 #powershell
+
 gh repo clone ChigozieIkechukwu/goph547-w2026-lab00-stCI
 cd goph547-w2026-lab00-stCI
 
 * **Step 2: Create and Activate my Virtual Environment**
-#I used virtualenv to create an isolated environment named .venv:
+* I used virtualenv to create an isolated environment named .venv:
 
 #powershell:
 virtualenv .venv
@@ -29,16 +30,19 @@ virtualenv .venv
 #To activate the environment in PowerShell, I ran:
 #powershell
 .\.venv\Scripts\Activate.ps1
+
 #(Note: I did not encounter an execution policy error, hence I did not use Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser to allow the script to run.)
 
 * **Step 3: Install the Package in Development Mode**
+
 #I installed my local package and its dependencies (NumPy and Matplotlib) using the following command:
 
 #powershell
+
 pip install -e ./
 
 **3. Script Description: driver.py**
-My primary entry point script is located at examples/driver.py. This script performs the following tasks:
+* My primary entry point script is located at examples/driver.py. This script performs the following tasks:
 
 * **NumPy Exercises**: It creates arrays of ones and NaNs, generates a column vector of odd numbers, and performs matrix operations including element-wise multiplication, dot products, and cross products.
 
@@ -47,23 +51,24 @@ My primary entry point script is located at examples/driver.py. This script perf
 * **Visualization**: I generated a subplot figure that analyzes the mean R, G, and B channel values against the x and y coordinates, including a black line for the overall RGB mean.
 
 **3.1 Detailed Line-by-Line Code Explanation**
+
 #python
 
 import numpy as np
 
-#Purpose: Imports the NumPy library and assigns it the alias np. NumPy provides support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays.
+* #Purpose: Imports the NumPy library and assigns it the alias np. NumPy provides support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays.
 
 #python
 
 import matplotlib.pyplot as plt
 
-#Purpose: Imports the pyplot module from Matplotlib and assigns it the alias plt. This module provides a MATLAB-like plotting interface for creating static, animated, and interactive visualizations in Python.
+* #Purpose: Imports the pyplot module from Matplotlib and assigns it the alias plt. This module provides a MATLAB-like plotting interface for creating static, animated, and interactive visualizations in Python.
 
 #python
 
 from PIL import Image
 
-#Purpose: Imports the Image module from the Python Imaging Library (PIL), also known as Pillow. This library adds image processing capabilities, such as opening, manipulating, and saving various image file formats.
+* #Purpose: Imports the Image module from the Python Imaging Library (PIL), also known as Pillow. This library adds image processing capabilities, such as opening, manipulating, and saving various image file formats.
 
 #python
 
@@ -72,20 +77,25 @@ from goph547lab00.arrays import square_ones
 #Purpose: Imports a custom function called square_ones from the arrays module within my local package goph547lab00. This function is defined in src/goph547lab00/arrays.py.
 
 #python
+
 def main():
 #Purpose: Defines the main function of the script. This function encapsulates all the code that will be executed when the script runs, following a structured programming approach.
 
 #python
+
     print("=" * 60)
     print("GOPH 547 Lab 0B - Numpy and Matplotlib Exercises")
     print("=" * 60)
+
 #Purpose: Prints a formatted header to the console, creating a visual separation and clearly indicating the start of the program output.
 
 #python
+
     # Part 1: Numpy Array Exercises
     print("\n" + "=" * 60)
     print("PART 1: NUMPY ARRAY EXERCISES")
     print("=" * 60)
+
 #Purpose: Prints a section header for Part 1 of the exercises, which focuses on NumPy array operations.
 
 #python
@@ -94,6 +104,7 @@ def main():
     print("1. Array of ones (3x5):")
     print(ones_array)
     print(f"   Shape: {ones_array.shape}")
+
 #Purpose: Creates a 3x5 array filled with the value 1.0 using np.ones(), prints the array, and displays its shape (dimensions).
 
 #python
@@ -102,6 +113,7 @@ def main():
     print("\n2. Array of NaN (6x3):")
     print(nan_array)
     print(f"   Shape: {nan_array.shape}")
+
 #Purpose: Creates a 6x3 array filled with NaN (Not a Number) values using np.full(). NaN is a special floating-point value used to represent missing or undefined data.
 
 #python
@@ -112,6 +124,7 @@ def main():
     print(odd_vector)
     print(f"   Shape: {odd_vector.shape}")
     print(f"   Values: {odd_numbers.tolist()}")
+
 #Purpose:
 
 * np.arange(45, 76, 2) generates a 1D array of numbers starting at 45, up to (but not including) 76, with a step of 2, resulting in odd numbers.
@@ -119,12 +132,15 @@ def main():
 * reshape(-1, 1) transforms the 1D array into a 2D column vector (an Nx1 array). The -1 tells NumPy to automatically calculate the size of that dimension.
 
 #python
+
     # 4. Find the sum of the vector produced in #3
     odd_sum = np.sum(odd_numbers)
     print(f"\n4. Sum of odd numbers vector: {odd_sum}")
+
 #Purpose: Calculates the sum of all elements in the odd_numbers array using np.sum() and prints the result.
 
 #python
+
     # 5. Produce the array A
     A = np.array([[5, 7, 2],
                   [1, -2, 3],
@@ -132,9 +148,11 @@ def main():
     print("\n5. Array A:")
     print(A)
     print(f"   Shape: {A.shape}")
+
 #Purpose: Creates a 3x3 array A from a nested list using np.array() and prints it along with its shape.
 
 #python
+
     # 6. Using a single command, produce the identity matrix B
     B = np.eye(3)
     print("\n6. Identity matrix B (3x3):")
@@ -142,10 +160,12 @@ def main():
 #Purpose: Creates a 3x3 identity matrix B using np.eye(3). An identity matrix has 1's on the main diagonal and 0's elsewhere.
 
 #python
+  
     # 7. Perform element-wise multiplication of A and B
     elementwise_mult = np.multiply(A, B)  # or A * B
     print("\n7. Element-wise multiplication of A and B:")
     print(elementwise_mult)
+
 #Purpose: Performs element-wise (Hadamard) multiplication between arrays A and B using np.multiply(). This multiplies corresponding elements: C[i,j] = A[i,j] * B[i,j].
 
 #python
@@ -154,15 +174,17 @@ def main():
     print("\n8. Dot product (matrix multiplication) of A and B:")
     print(dot_product)
     print("   Note: A * I = A, so this should equal A")
+
 #Purpose: Performs standard matrix multiplication (dot product) between A and B using np.dot(). Since B is an identity matrix, the result should equal A.
 
-python
+#python
     # 9. Calculate the cross product of A and B
     # For 3x3 matrices, cross product is typically for vectors
     # We'll compute cross product of first rows as example
     cross_product = np.cross(A[0], B[0])
     print("\n9. Cross product of first rows of A and B:")
     print(f"   Cross(A[0], B[0]) = {cross_product}")
+
 #Purpose: Computes the cross product (vector product) of the first rows of A and B using np.cross(). The cross product is defined for 3D vectors and produces a vector perpendicular to both input vectors.
 
 #python
@@ -181,6 +203,7 @@ python
         print("\n10. Loading image 'rock_canyon.jpg'...")
         img = Image.open('examples/rock_canyon.jpg')
         img_array = np.asarray(img)
+
 #Purpose:
 
 * Opens the image file rock_canyon.jpg from the examples directory using PIL's Image.open().
@@ -192,6 +215,7 @@ python
         print("11. Original image:")
         print(f"    Shape: {img_array.shape}")
         print(f"    Data type: {img_array.dtype}")
+
 #Purpose: Prints the shape (height, width, channels) and data type of the image array. For an RGB image, the shape would typically be (height, width, 3).
 
 #python
@@ -220,6 +244,7 @@ python
         gray_array = np.asarray(gray_img)
         print(f"    Shape: {gray_array.shape}")
         print(f"    Data type: {gray_array.dtype}")
+
 #Purpose:
 
 * Opens the image again and converts it to grayscale using the .convert('L') method.
@@ -232,6 +257,7 @@ python
         plt.imshow(gray_array, cmap='gray')
         plt.title('Grayscale Image')
         plt.axis('off')
+
 #Purpose: Displays the grayscale image in the second subplot (top-right), using the 'gray' colormap to ensure proper grayscale rendering.
 
 #python
@@ -249,6 +275,7 @@ python
         
         small_gray_image = gray_array[y_start:y_end, x_start:x_end]
         print(f"    Small image shape: {small_gray_image.shape}")
+
 #Purpose:
 
 * Extracts height and width from the grayscale array shape.
@@ -265,6 +292,7 @@ python
         plt.imshow(small_gray_image, cmap='gray')
         plt.title('Small Pinnacle Region')
         plt.axis('off')
+
 #Purpose: Displays the cropped region in the third subplot (bottom-left).
 
 #python
@@ -281,6 +309,7 @@ python
         mean_g_y = np.mean(img_array[:, :, 1], axis=1)  # Mean along x for G
         mean_b_y = np.mean(img_array[:, :, 2], axis=1)  # Mean along x for B
         mean_rgb_y = np.mean(img_array, axis=1).mean(axis=1)  # Mean of RGB
+
 #Purpose: Calculates various mean values for RGB analysis:
 
 * mean_r, mean_g, mean_b: Mean intensity along the y-axis (vertical) for each color channel, resulting in a 1D array for each channel representing the average color value across each column.
@@ -307,6 +336,7 @@ python
         plt.title('Horizontal Color Profile')
         plt.legend()
         plt.grid(True, alpha=0.3)
+
 #Purpose: Creates the fourth subplot (bottom-right) showing horizontal color profiles:
 
 * np.arange(len(mean_r)) creates x-coordinate values.
@@ -323,6 +353,7 @@ python
         output_file = 'rock_canyon_RGB_summary.png'
         plt.savefig(output_file, dpi=150, bbox_inches='tight')
         print(f"    Saved RGB analysis plot to: {output_file}")
+
 #Purpose:
 
 * plt.tight_layout(): Automatically adjusts subplot parameters to prevent label overlapping.
@@ -344,6 +375,7 @@ python
         print("  - driver.py (updated)")
         print(f"  - {output_file} (RGB analysis plot)")
         print("\nCheck your directory for the output image!")
+
 #Purpose: Prints a success message and summary of generated files upon successful completion.
 
 #python
