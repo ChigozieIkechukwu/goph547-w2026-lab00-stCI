@@ -25,10 +25,13 @@ cd goph547-w2026-lab00-stCI
 * I used virtualenv to create an isolated environment named .venv:
 
 #powershell:
+
 virtualenv .venv
 
 #To activate the environment in PowerShell, I ran:
+
 #powershell
+
 .\.venv\Scripts\Activate.ps1
 
 #(Note: I did not encounter an execution policy error, hence I did not use Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser to allow the script to run.)
