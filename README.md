@@ -29,16 +29,16 @@ pip install -e ./
 
 **3. Script Description: driver.py**
 My primary entry point script is located at examples/driver.py. This script performs the following tasks:
-* • NumPy Exercises: It creates arrays of ones and NaNs, generates a column vector of odd numbers, and performs matrix operations including element-wise multiplication, dot products, and cross products.
-* • Image Processing: I loaded the rock_canyon.jpg image, converted it to grayscale, and used NumPy slicing to create a cropped image of the central pinnacle.
-* • Visualization: I generated a subplot figure that analyzes the mean R, G, and B channel values against the x and y coordinates, including a black line for the overall RGB mean.
+* NumPy Exercises: It creates arrays of ones and NaNs, generates a column vector of odd numbers, and performs matrix operations including element-wise multiplication, dot products, and cross products.
+* Image Processing: I loaded the rock_canyon.jpg image, converted it to grayscale, and used NumPy slicing to create a cropped image of the central pinnacle.
+* Visualization: I generated a subplot figure that analyzes the mean R, G, and B channel values against the x and y coordinates, including a black line for the overall RGB mean.
 
 **4. How to Run my Code**
 To execute the script and see my results, I ensure my virtual environment is active and run the following from my project's root directory:
 python examples/driver.py
 Expected Output
-* • Terminal: I saw the printed results of my NumPy calculations and the shapes of my processed image arrays.
-* • Visualization: A new file named rock_canyon_RGB_summary.png was generated and saved in my examples/ directory.
+* Terminal: I saw the printed results of my NumPy calculations and the shapes of my processed image arrays.
+* Visualization: A new file named rock_canyon_RGB_summary.png was generated and saved in my examples/ directory.
 
 **5. My Repository Structure**
 My project is organized as follows:
