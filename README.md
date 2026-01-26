@@ -161,6 +161,7 @@ def main():
     B = np.eye(3)
     print("\n6. Identity matrix B (3x3):")
     print(B)
+    
 #Purpose: Creates a 3x3 identity matrix B using np.eye(3). An identity matrix has 1's on the main diagonal and 0's elsewhere.
 
 *python*
@@ -173,6 +174,7 @@ def main():
 #Purpose: Performs element-wise (Hadamard) multiplication between arrays A and B using np.multiply(). This multiplies corresponding elements: C[i,j] = A[i,j] * B[i,j].
 
 *python*
+
     # 8. Calculate the dot product (matrix multiplication) of A and B
     dot_product = np.dot(A, B)
     print("\n8. Dot product (matrix multiplication) of A and B:")
@@ -182,6 +184,7 @@ def main():
 #Purpose: Performs standard matrix multiplication (dot product) between A and B using np.dot(). Since B is an identity matrix, the result should equal A.
 
 *python*
+
     # 9. Calculate the cross product of A and B
     # For 3x3 matrices, cross product is typically for vectors
     # We'll compute cross product of first rows as example
@@ -192,14 +195,18 @@ def main():
 #Purpose: Computes the cross product (vector product) of the first rows of A and B using np.cross(). The cross product is defined for 3D vectors and produces a vector perpendicular to both input vectors.
 
 *python*
+
     # Part 2: Matplotlib Visualization Exercises
     print("\n" + "=" * 60)
     print("PART 2: MATPLOTLIB VISUALIZATION EXERCISES")
     print("=" * 60)
+    
 #Purpose: Prints a section header for Part 2, which focuses on image processing and visualization with Matplotlib.
 
 *python*
+
     try:
+    
 #Purpose: Begins a try-except block to handle potential errors (like missing files) gracefully during the image processing section.
 
 *python*
@@ -215,6 +222,7 @@ def main():
 * Converts the image to a NumPy array using np.asarray(), allowing pixel data to be manipulated numerically.
 
 *python*
+
         # 11. Plot the image and get shape
         print("11. Original image:")
         print(f"    Shape: {img_array.shape}")
@@ -223,12 +231,14 @@ def main():
 #Purpose: Prints the shape (height, width, channels) and data type of the image array. For an RGB image, the shape would typically be (height, width, 3).
 
 *python*
+
         # Display original image
         plt.figure(figsize=(10, 8))
         plt.subplot(2, 2, 1)
         plt.imshow(img_array)
         plt.title('Original Image (rock_canyon.jpg)')
         plt.axis('off')
+
 #Purpose:
 
 * plt.figure(figsize=(10, 8)): Creates a new figure with specified dimensions (10x8 inches).
@@ -242,6 +252,7 @@ def main():
 * plt.axis('off'): Turns off axis labels and ticks for cleaner image display.
 
 *python*
+
         # 12. Convert to grayscale and get shape
         print("\n12. Grayscale image:")
         gray_img = Image.open('examples/rock_canyon.jpg').convert('L')
@@ -255,7 +266,7 @@ def main():
 
 * Converts the grayscale image to a NumPy array and prints its properties. Grayscale images typically have shape (height, width) with no channel dimension.
 
-#python
+*python*
         # Display grayscale image
         plt.subplot(2, 2, 2)
         plt.imshow(gray_array, cmap='gray')
@@ -265,6 +276,7 @@ def main():
 #Purpose: Displays the grayscale image in the second subplot (top-right), using the 'gray' colormap to ensure proper grayscale rendering.
 
 *python*
+
         # 13. Create smaller image of pinnacle/pillar
         print("\n13. Creating smaller image of pinnacle/pillar...")
         # Assuming the image shape is (height, width, channels)
@@ -291,6 +303,7 @@ def main():
 * Prints the shape of the cropped image.
 
 *python*
+
         # Display small image
         plt.subplot(2, 2, 3)
         plt.imshow(small_gray_image, cmap='gray')
@@ -300,6 +313,7 @@ def main():
 #Purpose: Displays the cropped region in the third subplot (bottom-left).
 
 *python*
+
         # 14-16. Create RGB analysis subplot
         print("\n14-16. Creating RGB analysis plots...")
         
@@ -325,6 +339,7 @@ def main():
 * mean_rgb_y: Overall mean RGB value along the x-axis.
 
 *python*
+
         # Create subplots
         plt.subplot(2, 2, 4)
         
@@ -350,6 +365,7 @@ def main():
 * Formatting includes axis labels, title, legend, and semi-transparent grid.
 
 *python*
+
         # Adjust layout and save
         plt.tight_layout()
         
@@ -368,10 +384,13 @@ def main():
 
 *python*
         # Show all plots
+        
         plt.show()
+
 #Purpose: Displays the complete figure with all four subplots in a window (blocks execution until the window is closed).
 
 *python*
+       
         print("\n" + "=" * 60)
         print("EXERCISES COMPLETED SUCCESSFULLY!")
         print("=" * 60)
@@ -383,6 +402,7 @@ def main():
 #Purpose: Prints a success message and summary of generated files upon successful completion.
 
 *python*
+    
     except FileNotFoundError:
         print("\nERROR: 'rock_canyon.jpg' not found in examples/ directory!")
         print("Please download the image from D2L and place it in the examples/ folder.")
@@ -391,28 +411,36 @@ def main():
 #Purpose: Catches and handles the specific error when the required image file is not found, providing helpful instructions to the user.
 
 *python*
+
     except Exception as e:
         print(f"\nERROR: {e}")
         import traceback
         traceback.print_exc()
+
 #Purpose: Catches any other unexpected exceptions, prints the error message, and uses traceback.print_exc() to display the full traceback for debugging.
 
 *python*
+
 if __name__ == '__main__':
     main()
+
 #Purpose: Standard Python idiom that checks if this script is being run directly (not imported as a module). If so, it calls the main() function to execute the program.
 
 **4. How to Run my Code**
 #To execute the script and see my results, I ensure my virtual environment is active and run the following from my project's root directory:
 
-#powershell
+*powershell*
+
 python examples/driver.py
+
 **Expected Output**
+
 * Terminal: I saw the printed results of my NumPy calculations and the shapes of my processed image arrays.
 
 * Visualization: A new file named rock_canyon_RGB_summary.png was generated and saved in my examples/ directory.
 
 **5. My Repository Structure**
+
 #My project is organized as follows:
 
 **text**
