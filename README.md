@@ -4,7 +4,7 @@
 * Author: Chigozie Ikechukwu
 * Repository: https://github.com/ChigozieIkechukwu/goph547-w2026-lab00-stCI.
 
-**1. Introduction**
+**1. Introduction:**
 The purpose of this lab was to familiarize myself with the essential software tools and development practices for scientific computing in Python. This involved setting up my development environment on Windows, using Git and GitHub for version control, and creating a structured Python package that utilizes NumPy for numerical operations and Matplotlib for data visualization.
 
 **2. Installation Instructions (Windows PowerShell):**
