@@ -13,7 +13,7 @@
 **2. Installation Instructions (Windows PowerShell)**
 * I have designed these instructions to allow my package to be downloaded and installed into a virtual environment on a Windows system.
 
-* **Step 1: Clone my Repository**
+**Step 1: Clone my Repository**
 * I opened my Windows PowerShell and navigate to my desired directory, then I used the GitHub CLI to clone the repository:
 
 #powershell
@@ -21,7 +21,7 @@
 gh repo clone ChigozieIkechukwu/goph547-w2026-lab00-stCI
 cd goph547-w2026-lab00-stCI
 
-* **Step 2: Create and Activate my Virtual Environment**
+**Step 2: Create and Activate my Virtual Environment**
 * I used virtualenv to create an isolated environment named .venv:
 
 #powershell:
@@ -33,7 +33,7 @@ virtualenv .venv
 
 #(Note: I did not encounter an execution policy error, hence I did not use Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser to allow the script to run.)
 
-* **Step 3: Install the Package in Development Mode**
+**Step 3: Install the Package in Development Mode**
 
 #I installed my local package and its dependencies (NumPy and Matplotlib) using the following command:
 
