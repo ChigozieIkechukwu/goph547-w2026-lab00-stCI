@@ -28,17 +28,17 @@ I used virtualenv to create an isolated environment named .venv:
 
 virtualenv .venv
 
-#To activate the environment in PowerShell, I ran:
+To activate the environment in PowerShell, I ran:
 
 *powershell*
 
 .\.venv\Scripts\Activate.ps1
 
-#(Note: I did not encounter an execution policy error, hence I did not use Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser to allow the script to run.)
+(Note: I did not encounter an execution policy error, hence I did not use Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser to allow the script to run.)
 
 **Step 3: Install the Package in Development Mode**
 
-#I installed my local package and its dependencies (NumPy and Matplotlib) using the following command:
+I installed my local package and its dependencies (NumPy and Matplotlib) using the following command:
 
 *powershell*
 
@@ -46,7 +46,7 @@ pip install -e ./
 
 **3. Script Description: driver.py**
 
-#My primary entry point script is located at examples/driver.py. This script performs the following tasks:
+My primary entry point script is located at examples/driver.py. This script performs the following tasks:
 
 * **NumPy Exercises**: It creates arrays of ones and NaNs, generates a column vector of odd numbers, and performs matrix operations including element-wise multiplication, dot products, and cross products.
 
@@ -60,19 +60,19 @@ pip install -e ./
 
 import numpy as np
 
-#Purpose: Imports the NumPy library and assigns it the alias np. NumPy provides support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays.
+Purpose: Imports the NumPy library and assigns it the alias np. NumPy provides support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays.
 
 *python*
 
 import matplotlib.pyplot as plt
 
-#Purpose: Imports the pyplot module from Matplotlib and assigns it the alias plt. This module provides a MATLAB-like plotting interface for creating static, animated, and interactive visualizations in Python.
+Purpose: Imports the pyplot module from Matplotlib and assigns it the alias plt. This module provides a MATLAB-like plotting interface for creating static, animated, and interactive visualizations in Python.
 
 *python*
 
 from PIL import Image
 
-#Purpose: Imports the Image module from the Python Imaging Library (PIL), also known as Pillow. This library adds image processing capabilities, such as opening, manipulating, and saving various image file formats.
+Purpose: Imports the Image module from the Python Imaging Library (PIL), also known as Pillow. This library adds image processing capabilities, such as opening, manipulating, and saving various image file formats.
 
 *python*
 
@@ -84,7 +84,7 @@ from goph547lab00.arrays import square_ones
 
 def main():
 
-#Purpose: Defines the main function of the script. This function encapsulates all the code that will be executed when the script runs, following a structured programming approach.
+Purpose: Defines the main function of the script. This function encapsulates all the code that will be executed when the script runs, following a structured programming approach.
 
 *python*
 
@@ -92,7 +92,7 @@ def main():
     print("GOPH 547 Lab 0B - Numpy and Matplotlib Exercises")
     print("=" * 60)
 
-#Purpose: Prints a formatted header to the console, creating a visual separation and clearly indicating the start of the program output.
+Purpose: Prints a formatted header to the console, creating a visual separation and clearly indicating the start of the program output.
 
 *python*
 
@@ -102,7 +102,7 @@ def main():
     print("PART 1: NUMPY ARRAY EXERCISES")
     print("=" * 60)
 
-#Purpose: Prints a section header for Part 1 of the exercises, which focuses on NumPy array operations.
+Purpose: Prints a section header for Part 1 of the exercises, which focuses on NumPy array operations.
 
 *python*
 
@@ -113,7 +113,7 @@ def main():
     print(ones_array)
     print(f"   Shape: {ones_array.shape}")
 
-#Purpose: Creates a 3x5 array filled with the value 1.0 using np.ones(), prints the array, and displays its shape (dimensions).
+Purpose: Creates a 3x5 array filled with the value 1.0 using np.ones(), prints the array, and displays its shape (dimensions).
 
 *python*
     
@@ -124,7 +124,7 @@ def main():
     print(nan_array)
     print(f"   Shape: {nan_array.shape}")
 
-#Purpose: Creates a 6x3 array filled with NaN (Not a Number) values using np.full(). NaN is a special floating-point value used to represent missing or undefined data.
+Purpose: Creates a 6x3 array filled with NaN (Not a Number) values using np.full(). NaN is a special floating-point value used to represent missing or undefined data.
 
 *python*
     
@@ -136,7 +136,7 @@ def main():
     print(f"   Shape: {odd_vector.shape}")
     print(f"   Values: {odd_numbers.tolist()}")
 
-#Purpose:
+Purpose:
 
 * np.arange(45, 76, 2) generates a 1D array of numbers starting at 45, up to (but not including) 76, with a step of 2, resulting in odd numbers.
 
@@ -149,7 +149,7 @@ def main():
     odd_sum = np.sum(odd_numbers)
     print(f"\n4. Sum of odd numbers vector: {odd_sum}")
 
-#Purpose: Calculates the sum of all elements in the odd_numbers array using np.sum() and prints the result.
+Purpose: Calculates the sum of all elements in the odd_numbers array using np.sum() and prints the result.
 
 *python*
 
@@ -162,7 +162,7 @@ def main():
     print(A)
     print(f"   Shape: {A.shape}")
 
-#Purpose: Creates a 3x3 array A from a nested list using np.array() and prints it along with its shape.
+Purpose: Creates a 3x3 array A from a nested list using np.array() and prints it along with its shape.
 
 *python*
 
@@ -172,7 +172,7 @@ def main():
     print("\n6. Identity matrix B (3x3):")
     print(B)
     
-#Purpose: Creates a 3x3 identity matrix B using np.eye(3). An identity matrix has 1's on the main diagonal and 0's elsewhere.
+Purpose: Creates a 3x3 identity matrix B using np.eye(3). An identity matrix has 1's on the main diagonal and 0's elsewhere.
 
 *python*
   
@@ -182,7 +182,7 @@ def main():
     print("\n7. Element-wise multiplication of A and B:")
     print(elementwise_mult)
 
-#Purpose: Performs element-wise (Hadamard) multiplication between arrays A and B using np.multiply(). This multiplies corresponding elements: C[i,j] = A[i,j] * B[i,j].
+Purpose: Performs element-wise (Hadamard) multiplication between arrays A and B using np.multiply(). This multiplies corresponding elements: C[i,j] = A[i,j] * B[i,j].
 
 *python*
 
@@ -193,7 +193,7 @@ def main():
     print(dot_product)
     print("   Note: A * I = A, so this should equal A")
 
-#Purpose: Performs standard matrix multiplication (dot product) between A and B using np.dot(). Since B is an identity matrix, the result should equal A.
+Purpose: Performs standard matrix multiplication (dot product) between A and B using np.dot(). Since B is an identity matrix, the result should equal A.
 
 *python*
 
@@ -205,7 +205,7 @@ def main():
     print("\n9. Cross product of first rows of A and B:")
     print(f"   Cross(A[0], B[0]) = {cross_product}")
 
-#Purpose: Computes the cross product (vector product) of the first rows of A and B using np.cross(). The cross product is defined for 3D vectors and produces a vector perpendicular to both input vectors.
+Purpose: Computes the cross product (vector product) of the first rows of A and B using np.cross(). The cross product is defined for 3D vectors and produces a vector perpendicular to both input vectors.
 
 *python*
 
@@ -215,22 +215,23 @@ def main():
     print("PART 2: MATPLOTLIB VISUALIZATION EXERCISES")
     print("=" * 60)
     
-#Purpose: Prints a section header for Part 2, which focuses on image processing and visualization with Matplotlib.
+Purpose: Prints a section header for Part 2, which focuses on image processing and visualization with Matplotlib.
 
 *python*
 
     try:
     
-#Purpose: Begins a try-except block to handle potential errors (like missing files) gracefully during the image processing section.
+Purpose: Begins a try-except block to handle potential errors (like missing files) gracefully during the image processing section.
 
 *python*
+
         # 10. Load the image rock_canyon.jpg
         
         print("\n10. Loading image 'rock_canyon.jpg'...")
         img = Image.open('examples/rock_canyon.jpg')
         img_array = np.asarray(img)
 
-#Purpose:
+Purpose:
 
 * Opens the image file rock_canyon.jpg from the examples directory using PIL's Image.open().
 
@@ -256,7 +257,7 @@ def main():
         plt.title('Original Image (rock_canyon.jpg)')
         plt.axis('off')
 
-#Purpose:
+Purpose:
 
 * plt.figure(figsize=(10, 8)): Creates a new figure with specified dimensions (10x8 inches).
 
@@ -278,7 +279,7 @@ def main():
         print(f"    Shape: {gray_array.shape}")
         print(f"    Data type: {gray_array.dtype}")
 
-#Purpose:
+Purpose:
 
 * Opens the image again and converts it to grayscale using the .convert('L') method.
 
@@ -316,7 +317,7 @@ def main():
         
         print(f"    Small image shape: {small_gray_image.shape}")
 
-#Purpose:
+Purpose:
 
 * Extracts height and width from the grayscale array shape.
 
@@ -335,7 +336,7 @@ def main():
         plt.title('Small Pinnacle Region')
         plt.axis('off')
 
-#Purpose: Displays the cropped region in the third subplot (bottom-left).
+Purpose: Displays the cropped region in the third subplot (bottom-left).
 
 *python*
 
@@ -355,7 +356,7 @@ def main():
         mean_b_y = np.mean(img_array[:, :, 2], axis=1)  # Mean along x for B
         mean_rgb_y = np.mean(img_array, axis=1).mean(axis=1)  # Mean of RGB
 
-#Purpose: Calculates various mean values for RGB analysis:
+Purpose: Calculates various mean values for RGB analysis:
 
 * mean_r, mean_g, mean_b: Mean intensity along the y-axis (vertical) for each color channel, resulting in a 1D array for each channel representing the average color value across each column.
 
@@ -385,7 +386,7 @@ def main():
         plt.legend()
         plt.grid(True, alpha=0.3)
 
-#Purpose: Creates the fourth subplot (bottom-right) showing horizontal color profiles:
+Purpose: Creates the fourth subplot (bottom-right) showing horizontal color profiles:
 
 * np.arange(len(mean_r)) creates x-coordinate values.
 
@@ -405,7 +406,7 @@ def main():
         plt.savefig(output_file, dpi=150, bbox_inches='tight')
         print(f"    Saved RGB analysis plot to: {output_file}")
 
-#Purpose:
+Purpose:
 
 * plt.tight_layout(): Automatically adjusts subplot parameters to prevent label overlapping.
 
@@ -418,7 +419,7 @@ def main():
         
         plt.show()
 
-#Purpose: Displays the complete figure with all four subplots in a window (blocks execution until the window is closed).
+Purpose: Displays the complete figure with all four subplots in a window (blocks execution until the window is closed).
 
 *python*
        
@@ -430,7 +431,7 @@ def main():
         print(f"  - {output_file} (RGB analysis plot)")
         print("\nCheck your directory for the output image!")
 
-#Purpose: Prints a success message and summary of generated files upon successful completion.
+Purpose: Prints a success message and summary of generated files upon successful completion.
 
 *python*
     
@@ -439,7 +440,7 @@ def main():
         print("Please download the image from D2L and place it in the examples/ folder.")
         print("Then run this script again.")
 
-#Purpose: Catches and handles the specific error when the required image file is not found, providing helpful instructions to the user.
+Purpose: Catches and handles the specific error when the required image file is not found, providing helpful instructions to the user.
 
 *python*
 
@@ -448,7 +449,7 @@ def main():
         import traceback
         traceback.print_exc()
 
-#Purpose: Catches any other unexpected exceptions, prints the error message, and uses traceback.print_exc() to display the full traceback for debugging.
+Purpose: Catches any other unexpected exceptions, prints the error message, and uses traceback.print_exc() to display the full traceback for debugging.
 
 *python*
 
@@ -458,7 +459,7 @@ if __name__ == '__main__':
 #Purpose: Standard Python idiom that checks if this script is being run directly (not imported as a module). If so, it calls the main() function to execute the program.
 
 **4. How to Run my Code**
-#To execute the script and see my results, I ensure my virtual environment is active and run the following from my project's root directory:
+To execute the script and see my results, I ensure my virtual environment is active and run the following from my project's root directory:
 
 *powershell*
 
@@ -472,7 +473,7 @@ python examples/driver.py
 
 **5. My Repository Structure**
 
-#My project is organized as follows:
+My project is organized as follows:
 
 **text**
 goph547-w2026-lab00-stCI/
