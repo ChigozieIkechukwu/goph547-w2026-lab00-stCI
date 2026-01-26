@@ -16,7 +16,7 @@
 **Step 1: Clone my Repository**
 * I opened my Windows PowerShell and navigate to my desired directory, then I used the GitHub CLI to clone the repository:
 
-# powershell
+### powershell
 
 gh repo clone ChigozieIkechukwu/goph547-w2026-lab00-stCI
 cd goph547-w2026-lab00-stCI
